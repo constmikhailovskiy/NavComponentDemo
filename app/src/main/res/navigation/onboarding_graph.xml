@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/onboarding_graph">
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/onboarding_graph"
+    app:startDestination="@id/firstOnboardingFragment">
 
-    
+    <fragment
+        android:id="@+id/firstOnboardingFragment"
+        android:name="com.navigation.demo.onboarding.FirstOnboardingFragment"
+        android:label="FirstOnboardingFragment" >
+        <action
+            android:id="@+id/action_firstOnboardingFragment_to_secondOnboardingFragment"
+            app:destination="@id/secondOnboardingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondOnboardingFragment"
+        android:name="com.navigation.demo.onboarding.SecondOnboardingFragment"
+        android:label="SecondOnboardingFragment" >
+        <action
+            android:id="@+id/action_secondOnboardingFragment_to_thirdOnboardingFragment"
+            app:destination="@id/thirdOnboardingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdOnboardingFragment"
+        android:name="com.navigation.demo.onboarding.ThirdOnboardingFragment"
+        android:label="ThirdOnboardingFragment" />
 </navigation>
