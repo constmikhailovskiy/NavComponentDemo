@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.navigation.demo.R
+import kotlinx.android.synthetic.main.fragment_onboarding_3.*
 
 class ThirdOnboardingFragment : Fragment() {
 
@@ -15,5 +17,9 @@ class ThirdOnboardingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        btnFinish.setOnClickListener {
+            findNavController().navigate(R.id.action_show_home)
+        }
     }
 }

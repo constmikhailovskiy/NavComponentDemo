@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/home_graph">
-
-
+    android:id="@+id/home_graph"
+    app:startDestination="@id/eventsListFragment">
+    <fragment
+        android:id="@+id/eventsListFragment"
+        android:name="com.navigation.demo.home.events.EventsListFragment"
+        android:label="EventsListFragment" />
+    <fragment
+        android:id="@+id/contestFragment"
+        android:name="com.navigation.demo.home.contest.ContestFragment"
+        android:label="ContestFragment" />
+    <fragment
+        android:id="@+id/questFragment"
+        android:name="com.navigation.demo.home.quest.QuestFragment"
+        android:label="QuestFragment" />
 </navigation>

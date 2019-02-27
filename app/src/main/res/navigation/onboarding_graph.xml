@@ -19,8 +19,19 @@
             android:id="@+id/action_secondOnboardingFragment_to_thirdOnboardingFragment"
             app:destination="@id/thirdOnboardingFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/thirdOnboardingFragment"
         android:name="com.navigation.demo.onboarding.ThirdOnboardingFragment"
-        android:label="ThirdOnboardingFragment" />
+        android:label="ThirdOnboardingFragment" >
+
+        <action
+            android:id="@+id/action_show_home"
+            app:destination="@+id/activityHome"
+            app:popUpTo="@+id/home_graph" />
+    </fragment>
+
+    <activity
+        android:id="@+id/activityHome"
+        android:name="com.navigation.demo.home.HomeActivity" />
 </navigation>

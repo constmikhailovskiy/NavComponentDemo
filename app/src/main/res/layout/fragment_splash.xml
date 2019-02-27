@@ -11,7 +11,7 @@
         android:id="@+id/tvTitle"
         android:textSize="32sp"
         android:gravity="center"
-        android:text="Splash!"
+        android:text="Welcome, Dear User!"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
