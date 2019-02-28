@@ -26,4 +26,13 @@
         android:id="@+id/contestApplicationFormFragment"
         android:name="com.navigation.demo.home.contest.ContestApplicationFormFragment"
         android:label="ContestApplicationFormFragment"/>
+
+    <fragment
+        android:id="@+id/privacyPolicyFragment"
+        android:name="com.navigation.demo.home.terms.PrivacyPolicyFragment"
+        android:label="PrivacyPolicyFragment"/>
+
+    <action
+        android:id="@+id/action_privacyPolicy"
+        app:destination="@id/privacyPolicyFragment" />
 </navigation>
