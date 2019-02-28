@@ -1,7 +1,6 @@
 package com.navigation.demo.home.contest
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,7 +37,6 @@ class ContestFragment : Fragment() {
         (requireActivity() as HomeActivity).getHomeComponent().contestComponent().inject(this)
 
         viewModel.submissionEventsLiveData.observe(this, Observer {
-            Log.d("ContestFragment", "Handle submission event: $it")
             handleSubmissionEvent(it)
         })
 
@@ -46,7 +44,6 @@ class ContestFragment : Fragment() {
     }
 
     private fun handleSubmissionEvent(event: SubmissionEvent) {
-        Log.d("Contest fragment", "Event: $event")
         when (event) {
             is SubmissionEvent.ApplicationSubmitted -> {
                 btnApply.isVisible = false
