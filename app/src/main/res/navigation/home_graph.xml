@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/home_graph"
     app:startDestination="@id/fragmentEventsList">
+
     <fragment
         android:id="@+id/fragmentEventsList"
         android:name="com.navigation.demo.home.events.EventsListFragment"

@@ -2,6 +2,8 @@ package com.navigation.demo.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
@@ -15,6 +17,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var homeComponent: HomeComponent
+    private lateinit var navListener: NavController.OnDestinationChangedListener
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,12 +28,33 @@ class HomeActivity : AppCompatActivity() {
             inject(this@HomeActivity)
         }
 
-        val navController = findNavController(R.id.mainNavigationFragment)
+        navController = findNavController(R.id.mainNavigationFragment)
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
 
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         toolbar.setupWithNavController(navController, appBarConfiguration)
+
+        initNavigationListener()
+
+        navController.addOnDestinationChangedListener(navListener)
+    }
+
+    override fun onDestroy() {
+        navController.removeOnDestinationChangedListener(navListener)
+
+        super.onDestroy()
     }
 
     fun getHomeComponent() = homeComponent
+
+    private fun initNavigationListener() {
+        navListener = NavController.OnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.fragmentEventsList, R.id.fragmentContest, R.id.fragmentNotifications -> {
+                    bottomNavigationView.isVisible = true
+                }
+                else -> bottomNavigationView.isVisible = false
+            }
+        }
+    }
 }

@@ -4,6 +4,7 @@ import android.app.Application
 import com.navigation.demo.di.components.AppComponent
 import com.navigation.demo.di.modules.AppModule
 import com.navigation.demo.di.components.DaggerAppComponent
+import timber.log.Timber
 
 class NavigationDemoApp : Application() {
 
@@ -18,5 +19,9 @@ class NavigationDemoApp : Application() {
             .builder()
             .appModule(AppModule(this))
             .build()
+
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree()) // logger
+        }
     }
 }
