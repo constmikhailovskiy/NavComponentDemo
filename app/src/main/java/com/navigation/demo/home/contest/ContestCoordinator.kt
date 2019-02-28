@@ -23,6 +23,6 @@ class ContestNavigator(private val activity: AppCompatActivity) {
     }
 
     fun closeApplicationFormScreen() {
-        activity.findNavController(R.id.mainNavigationFragment).navigateUp()
+        activity.findNavController(R.id.mainNavigationFragment).navigate(R.id.action_fragmentContestApplication_to_fragmentContest)
     }
 }

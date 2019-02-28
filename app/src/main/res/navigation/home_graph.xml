@@ -3,36 +3,43 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/home_graph"
-    app:startDestination="@id/eventsListFragment">
+    app:startDestination="@id/fragmentEventsList">
     <fragment
-        android:id="@+id/eventsListFragment"
+        android:id="@+id/fragmentEventsList"
         android:name="com.navigation.demo.home.events.EventsListFragment"
-        android:label="EventsListFragment" />
+        android:label="Events" />
     <fragment
-        android:id="@+id/contestFragment"
+        android:id="@+id/fragmentContest"
         android:name="com.navigation.demo.home.contest.ContestFragment"
-        android:label="ContestFragment" >
+        android:label="Contest" >
 
         <action
             android:id="@+id/action_contestFragment_to_contestApplicationFormFragment"
-            app:destination="@id/contestApplicationFormFragment"/>
+            app:destination="@id/fragmentContestApplication" />
     </fragment>
     <fragment
-        android:id="@+id/questFragment"
-        android:name="com.navigation.demo.home.quest.QuestFragment"
-        android:label="QuestFragment" />
+        android:id="@+id/fragmentNotifications"
+        android:name="com.navigation.demo.home.notifications.NotificationsFragment"
+        android:label="Notifications" />
 
     <fragment
-        android:id="@+id/contestApplicationFormFragment"
+        android:id="@+id/fragmentContestApplication"
         android:name="com.navigation.demo.home.contest.ContestApplicationFormFragment"
-        android:label="ContestApplicationFormFragment"/>
+        android:label="Contest application">
+
+        <action
+            android:id="@+id/action_fragmentContestApplication_to_fragmentContest"
+            app:destination="@id/fragmentContest"
+            app:popUpTo="@id/home_graph"
+            app:popUpToInclusive="true"/>
+    </fragment>
 
     <fragment
-        android:id="@+id/privacyPolicyFragment"
+        android:id="@+id/fragmentPrivacyPolicy"
         android:name="com.navigation.demo.home.terms.PrivacyPolicyFragment"
-        android:label="PrivacyPolicyFragment"/>
+        android:label="Terms"/>
 
     <action
         android:id="@+id/action_privacyPolicy"
-        app:destination="@id/privacyPolicyFragment" />
+        app:destination="@id/fragmentPrivacyPolicy" />
 </navigation>

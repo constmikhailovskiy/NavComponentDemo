@@ -22,8 +22,13 @@
 
         <activity android:name=".onboarding.OnboardingActivity" />
 
-        <activity android:name=".home.HomeActivity" android:label="@string/app_name">
+        <activity
+            android:name=".home.HomeActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop">
         </activity>
+
+        <service android:name=".home.NotificationsService" />
     </application>
 
 </manifest>

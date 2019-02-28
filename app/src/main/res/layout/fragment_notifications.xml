@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:padding="32dp">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/btnShowPrivacyPolicyNotif"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:text="Show privacy policy notification"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/btnShowEventsNotif"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:layout_marginTop="36dp"
+        android:text="Show events notification"/>
+
+    <Button
+        android:id="@+id/btnShowContestNotif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="36dp"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:text="Show contest notification"/>
+</LinearLayout>
