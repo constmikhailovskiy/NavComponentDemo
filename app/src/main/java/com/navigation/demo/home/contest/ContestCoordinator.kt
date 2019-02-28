@@ -1,6 +1,5 @@
 package com.navigation.demo.home.contest
 
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import com.navigation.demo.R
@@ -8,12 +7,10 @@ import com.navigation.demo.R
 class ContestCoordinator constructor(private val navigator: ContestNavigator) {
 
     fun start() {
-        Log.d("Coordinator", "Navigator: $navigator")
         navigator.openApplicationFormScreen()
     }
 
     fun applicationSubmitted() {
-        Log.d("Coordinator", "Navigator: $navigator")
         navigator.closeApplicationFormScreen()
     }
 }
