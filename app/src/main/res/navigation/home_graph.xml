@@ -11,9 +11,19 @@
     <fragment
         android:id="@+id/contestFragment"
         android:name="com.navigation.demo.home.contest.ContestFragment"
-        android:label="ContestFragment" />
+        android:label="ContestFragment" >
+
+        <action
+            android:id="@+id/action_contestFragment_to_contestApplicationFormFragment"
+            app:destination="@id/contestApplicationFormFragment"/>
+    </fragment>
     <fragment
         android:id="@+id/questFragment"
         android:name="com.navigation.demo.home.quest.QuestFragment"
         android:label="QuestFragment" />
+
+    <fragment
+        android:id="@+id/contestApplicationFormFragment"
+        android:name="com.navigation.demo.home.contest.ContestApplicationFormFragment"
+        android:label="ContestApplicationFormFragment"/>
 </navigation>

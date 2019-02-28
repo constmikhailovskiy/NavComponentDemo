@@ -1,6 +1,8 @@
 package com.navigation.demo.di.components
 
 import com.navigation.demo.di.modules.AppModule
+import com.navigation.demo.di.modules.ContestModule
+import com.navigation.demo.di.modules.HomeModule
 import com.navigation.demo.di.modules.SplashModule
 import dagger.Component
 import javax.inject.Singleton
@@ -13,5 +15,5 @@ interface AppComponent {
 
     fun onboardingComponent(): OnboardingComponent
 
-    fun homeComponent(): HomeComponent
+    fun homeComponent(module: HomeModule): HomeComponent
 }

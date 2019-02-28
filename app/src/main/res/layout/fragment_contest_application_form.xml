@@ -6,27 +6,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatEditText
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:id="@+id/etParticipantName"
         android:gravity="center"
-        android:textSize="32sp"
-        android:padding="8dp"
-        android:text="Contest"
-        android:id="@+id/tvHeader"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvStatusLabel"
-        android:gravity="center"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:textSize="24sp"
-        android:text="Apply for our Useless Contest"
-        app:layout_constraintTop_toBottomOf="@id/tvHeader"
-        app:layout_constraintBottom_toTopOf="@id/btnApply"
+        android:lines="1"
+        android:maxLines="1"
+        android:hint="Type Your Name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnSubmit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,11 +27,11 @@
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnApply"
-        android:text="Apply now!"
+        android:id="@+id/btnSubmit"
+        android:text="Submit"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvStatusLabel"
+        app:layout_constraintTop_toBottomOf="@id/etParticipantName"
         app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
