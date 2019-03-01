@@ -15,14 +15,21 @@ class ContestCoordinator constructor(private val navigator: ContestNavigator) {
     }
 }
 
-class ContestNavigator(private val activity: AppCompatActivity) {
+interface ContestNavigator {
 
-    fun openApplicationFormScreen() {
+    fun openApplicationFormScreen()
+
+    fun closeApplicationFormScreen()
+}
+
+class ContestNavigatorImpl(private val activity: AppCompatActivity) : ContestNavigator {
+
+    override fun openApplicationFormScreen() {
         activity.findNavController(R.id.mainNavigationFragment)
             .navigate(R.id.action_contestFragment_to_contestApplicationFormFragment)
     }
 
-    fun closeApplicationFormScreen() {
+    override fun closeApplicationFormScreen() {
         activity.findNavController(R.id.mainNavigationFragment).navigate(R.id.action_fragmentContestApplication_to_fragmentContest)
     }
 }

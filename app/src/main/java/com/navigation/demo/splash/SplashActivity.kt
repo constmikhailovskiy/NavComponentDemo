@@ -10,7 +10,7 @@ import com.navigation.demo.di.modules.SplashModule
 class SplashActivity : AppCompatActivity() {
 
     private lateinit var component: SplashComponent
-    private val navigator: SplashNavigator = SplashNavigator()
+    private val navigator = SplashNavigatorImpl()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

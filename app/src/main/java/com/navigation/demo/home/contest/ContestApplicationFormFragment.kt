@@ -19,7 +19,7 @@ class ContestApplicationFormFragment : Fragment() {
     lateinit var viewModelProvider: Provider<ContestViewModel>
 
     @Inject
-    lateinit var navigator: ContestNavigator
+    lateinit var navigator: ContestNavigatorImpl
 
     private val viewModel by lazy {
         requireActivity().viewModel<ContestViewModel>(SimpleViewModelProviderFactory(viewModelProvider))
