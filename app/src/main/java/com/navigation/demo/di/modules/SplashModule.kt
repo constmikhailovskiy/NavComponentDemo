@@ -8,7 +8,7 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class SplashModule(private val navigator: SplashNavigatorImpl) {
+class SplashModule(private val navigator: SplashNavigator) {
 
     @Provides
     @ActivityScope

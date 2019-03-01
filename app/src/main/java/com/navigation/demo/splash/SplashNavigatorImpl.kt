@@ -1,11 +1,11 @@
 package com.navigation.demo.splash
 
-import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.navigation.demo.R
 
 interface SplashNavigator {
 
-    var activity: SplashActivity?
+    var fragment: SplashFragment?
 
     fun navigateToOnboarding()
 
@@ -14,20 +14,13 @@ interface SplashNavigator {
 
 class SplashNavigatorImpl : SplashNavigator {
 
-    override var activity: SplashActivity? = null
+    override var fragment: SplashFragment? = null
 
     override fun navigateToOnboarding() {
-        activity?.let {
-            // Show next activity and clear this one from the back stack.
-            findNavController(it, R.id.splashNavigationFragment).navigate(R.id.action_start_onboarding)
-            it.finish()
-        }
+        fragment?.findNavController()?.navigate(R.id.action_start_onboarding)
     }
 
     override fun navigateToHome() {
-        activity?.let {
-            findNavController(it, R.id.splashNavigationFragment).navigate(R.id.action_start_home)
-            it.finish()
-        }
+        fragment?.findNavController()?.navigate(R.id.action_start_home)
     }
 }
